@@ -1,0 +1,21 @@
+.addToDoButton{
+    /* border: none; */
+    border-radius: 4px;
+    background: none;
+    border-style: solid;
+}
+#lowPriorityBtn{
+    color: green;
+    font-weight: 1000;
+}
+#midPriorityBtn{
+    color: orange;
+    font-weight: 1000;
+}
+#highPriorityBtn{
+    color: red;
+    font-weight: 1000;
+}
+#toDoBody{
+    display: flex;
+}

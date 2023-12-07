@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <title>Document</title>
 </head>
-<body>
+<body id="todoBody">
+    <div id="todoList"></div>
+    <input type="text" id="newTodo">
+    <input class="addToDoButton" type="button" id="description" value="+">
+    <input type="date" id="dueDate" text="Add due date">
+    <input type="time" id="dueTime">
+    <input class="addToDoButton" name="priority" value="!" type="button" id="lowPriorityBtn">
+    <label for="!!">!!!<input class="radio-button" name="priority" value="!!" type="radio" id="midPriorityBtn"></label>
     
+    <input class="addToDoButton" name="priority" value="!!!" type="button" id="highPriorityBtn">
 </body>
 </html>
