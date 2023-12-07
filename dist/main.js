@@ -1,0 +1,1 @@
+(()=>{"use strict";let t=new function(t,e="",i="false",s="low",l="false"){return this.title=t,this.description=e,this.dueDate=i,this.dueTime=l,this.priority=s,{title:t,description:e,dueDate:i}}("Clean the kitchen");console.log(t)})();
