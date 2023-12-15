@@ -8,6 +8,7 @@ export function todoItem(title, description='', dueDate = 'false', dueTime = 'fa
     this.priority = priority;
     this.done = done;
     return {
+        title,
         description,
         dueDate,
         dueTime,
