@@ -12,5 +12,4 @@ project1.addToDoItem(new todoItem("Task 7", "Description for Task 7", "2023-01-0
 project1.addToDoItem(new todoItem("Task 8", "Description for Task 8", "2023-01-08", "1:30 PM", "medium"));
 project1.addToDoItem(new todoItem("Task 9", "Description for Task 9", "2023-01-09", "6:00 PM", "low"));
 project1.addToDoItem(new todoItem("Task 10", "Description for Task 10", "2023-01-10", "8:45 AM", "high"));
-console.table(project1.toDoItems);
-//drawListOfToDos(project1.toDoItems);
+drawListOfToDos(project1.toDoItems);
