@@ -13,3 +13,8 @@ export function drawListOfToDos(toDoArray) {
     });
     //console.table(toDoArray);
 }
+    document.getElementById("addToDoForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        this.elements = elements;
+        console.log(elements);
+    });

@@ -4,6 +4,15 @@
     background: none;
     border-style: solid;
 }
+.submitToDoButton{
+    /* border: none; */
+    border-radius: 4px;
+    background: none;
+    border-style: solid;
+    background-color: cyan;
+    font-weight: 1000;
+    text-transform: uppercase;
+}
 #lowPriorityBtn{
     color: green;
     font-weight: 1000;
