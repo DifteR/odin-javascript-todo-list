@@ -13,11 +13,31 @@ export function drawListOfToDos(toDoArray) {
     });
     //console.table(toDoArray);
 }
-const form = document.getElementById('addToDoForm');
-form.addEventListener('submit', getFormData);
+// const form = document.getElementById('addToDoForm');
+// form.addEventListener('submit', getFormData);
 
-function getFormData(event) {
+// function getFormData(event) {
+//     event.preventDefault();
+//     const podatkiTabele = new FormData(event.target);
+//     const test = {};
+//     //test = Object.fromEntries(podatkiTabele.entries());
+//     podatkiTabele.forEach((value, key) => (test[key] = value));
+//     console.log(test);
+// }
+
+
+
+let form = document.getElementById('addToDoForm');
+form.addEventListener('submit', callbackFunction);
+                      
+function callbackFunction(event) {
     event.preventDefault();
-    const podatkiTabele = new FormData(event.target);
-    console.log(FormData);
+    const myFormData = new FormData(event.target);
+    
+    myFormData.forEach(element => {
+        console.log(element);
+    });
+    console.log(myFormData);
+    //const formDataObj = Object.fromEntries(myFormData.entries());
+    //console.log(myFormData.get('newTodo'));
 }
