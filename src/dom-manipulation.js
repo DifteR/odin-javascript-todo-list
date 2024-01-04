@@ -13,6 +13,12 @@ export function drawListOfToDos(toDoArray) {
     });
     //console.table(toDoArray);
 }
+
+
+function drawListOfProjects(project) {
+    
+}
+
 // const form = document.getElementById('addToDoForm');
 // form.addEventListener('submit', getFormData);
 
