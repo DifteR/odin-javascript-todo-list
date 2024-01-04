@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
     <script src="main.js" defer></script>
     <title>Document</title>
-</head>
-<body id="todoBody">
+  </head>
+  <body id="todoBody">
     <div id="todoList">
-        <ul id="todoList"></ul>
+      <ul id="todoList"></ul>
     </div>
+    <!-- <form id="addToDoForm">
+      <input type="text" id="newTodo" />
+      
+      <input type="date" id="dueDate" text="Add due date" />
+      <input type="time" id="dueTime" />
+      <input class="submitToDoButton" type="submit" value="Add" />
+    </form> -->
     <form id="addToDoForm">
-        <input type="text" id="newTodo">
-        <input class="addToDoButton" type="button" id="description" value="+">
-        <input type="date" id="dueDate" text="Add due date">
-        <input type="time" id="dueTime">
-        <input class="addToDoButton" name="priority" value="!" type="button" id="lowPriorityBtn">
-        <label for="!!">!!!<input class="radio-button" name="priority" value="!!" type="radio" id="midPriorityBtn"></label>
-        <input class="addToDoButton" name="priority" value="!!!" type="button" id="highPriorityBtn">
-        <input class="submitToDoButton" type="submit" value="Add">
+      <input type="text" name="newTodo" id="newTodo" />
+      <input class="addToDoButton" type="button" id="description" value="+" />
+      <input type="date" id="dueDate" name="dueDate" text="Add due date" />
+      <input type="time" name="dueTime" id="dueTime" />
+      <input type="submit" value="submit" />
     </form>
-</body>
+  </body>
 </html>
