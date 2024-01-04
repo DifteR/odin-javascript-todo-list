@@ -41,3 +41,11 @@ function callbackFunction(event) {
     //const formDataObj = Object.fromEntries(myFormData.entries());
     //console.log(myFormData.get('newTodo'));
 }
+
+let addNewProjectForm = document.getElementById('addProjectForm');
+addNewProjectForm.addEventListener('submit', addProjectFunction);
+
+function addProjectFunction(event) {
+    event.preventDefault();
+    
+}

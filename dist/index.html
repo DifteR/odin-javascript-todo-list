@@ -7,7 +7,15 @@
     <script src="main.js" defer></script>
     <title>Document</title>
   </head>
+
   <body id="todoBody">
+    <aside>
+      <ul></ul>
+    </aside>
+    <form id="addProjectForm">
+      <input type="text" name="newProjectName" id="newProjectName" />
+      <input type="submit" value="+" />
+    </form>
     <div id="todoList">
       <ul id="todoList"></ul>
     </div>
@@ -18,6 +26,7 @@
       <input type="time" id="dueTime" />
       <input class="submitToDoButton" type="submit" value="Add" />
     </form> -->
+
     <form id="addToDoForm">
       <input type="text" name="newTodo" id="newTodo" />
       <input class="addToDoButton" type="button" id="description" value="+" />
