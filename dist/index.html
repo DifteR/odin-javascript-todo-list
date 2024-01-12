@@ -9,23 +9,21 @@
   </head>
 
   <body id="todoBody">
-    <aside>
+    <aside id="projectsList">
       <ul></ul>
     </aside>
     <form id="addProjectForm">
       <input type="text" name="newProjectName" id="newProjectName" />
+      <input
+        type="text"
+        name="newProjectDescription"
+        id="newProjectDescription"
+      />
       <input type="submit" value="+" />
     </form>
     <div id="todoList">
       <ul id="todoList"></ul>
     </div>
-    <!-- <form id="addToDoForm">
-      <input type="text" id="newTodo" />
-      
-      <input type="date" id="dueDate" text="Add due date" />
-      <input type="time" id="dueTime" />
-      <input class="submitToDoButton" type="submit" value="Add" />
-    </form> -->
 
     <form id="addToDoForm">
       <input type="text" name="newTodo" id="newTodo" />

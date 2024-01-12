@@ -1,35 +1,29 @@
-todoList = document.getElementById("todoList");
+import { project } from "./project";
+import { projectsArray } from "./index.js";
 
+todoList = document.getElementById("todoList");
 export function drawListOfToDos(toDoArray) {
     
-    //<input type="checkbox"></input>
     toDoArray.forEach(toDoItem => {
         console.log(toDoItem);
         let newElem = document.createElement('li');
         newElem.innerHTML = "<input type='checkbox'></input>";
         newElem.innerHTML += toDoItem.title;
-        //newElem.innerHTML += description;
         todoList.appendChild(newElem);
     });
-    //console.table(toDoArray);
 }
 
 
-function drawListOfProjects(project) {
-    
+export function drawListOfProjects(projectsArray) {
+    projectsList = document.getElementById('projectsList');
+    projectsList.innerText = "";
+    projectsArray.forEach(project => {
+        console.log(project);
+        let newProject = document.createElement('li');
+        newProject.innerText = `${project.title} .....   ${project.description}`;
+        projectsList.appendChild(newProject);
+    });
 }
-
-// const form = document.getElementById('addToDoForm');
-// form.addEventListener('submit', getFormData);
-
-// function getFormData(event) {
-//     event.preventDefault();
-//     const podatkiTabele = new FormData(event.target);
-//     const test = {};
-//     //test = Object.fromEntries(podatkiTabele.entries());
-//     podatkiTabele.forEach((value, key) => (test[key] = value));
-//     console.log(test);
-// }
 
 
 
@@ -44,14 +38,17 @@ function callbackFunction(event) {
         console.log(element);
     });
     console.log(myFormData);
-    //const formDataObj = Object.fromEntries(myFormData.entries());
+    const formDataObj = Object.fromEntries(myFormData.entries());
     //console.log(myFormData.get('newTodo'));
 }
 
 let addNewProjectForm = document.getElementById('addProjectForm');
 addNewProjectForm.addEventListener('submit', addProjectFunction);
 
+
 function addProjectFunction(event) {
     event.preventDefault();
-    
+    const projectFormData = new FormData(event.target);
+    projectsArray.push(new project(projectFormData.get('newProjectName'), projectFormData.get('newProjectDescription')));
+    drawListOfProjects(projectsArray);
 }
