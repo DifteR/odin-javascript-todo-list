@@ -2,8 +2,8 @@ import { project } from "./project";
 import { projectsArray } from "./index.js";
 
 todoList = document.getElementById("todoList");
-export function drawListOfToDos(toDoArray) {
-    
+
+export function drawListOfToDos(toDoArray) {    
     toDoArray.forEach(toDoItem => {
         console.log(toDoItem);
         let newElem = document.createElement('li');
@@ -19,9 +19,11 @@ export function drawListOfProjects(projectsArray) {
     projectsList.innerText = "";
     projectsArray.forEach(project => {
         console.log(project);
-        let newProject = document.createElement('li');
-        newProject.innerText = `${project.title} .....   ${project.description}`;
+        let newProject = document.createElement('button');
+        newProject.setAttribute('onclick', drawListOfToDos(project.toDoItems));
+        newProject.innerHTML = `${project.title} ..... ${project.description}`;
         projectsList.appendChild(newProject);
+        console.log(project.toDoItems);
     });
 }
 
@@ -39,7 +41,6 @@ function callbackFunction(event) {
     });
     console.log(myFormData);
     const formDataObj = Object.fromEntries(myFormData.entries());
-    //console.log(myFormData.get('newTodo'));
 }
 
 let addNewProjectForm = document.getElementById('addProjectForm');
@@ -51,4 +52,5 @@ function addProjectFunction(event) {
     const projectFormData = new FormData(event.target);
     projectsArray.push(new project(projectFormData.get('newProjectName'), projectFormData.get('newProjectDescription')));
     drawListOfProjects(projectsArray);
+    console.log(projectsArray);
 }
