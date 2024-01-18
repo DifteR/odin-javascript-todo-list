@@ -1,6 +1,6 @@
 import { todoItem } from "./todo-item";
 import { project } from "./project";
-import { drawListOfToDos } from "./dom-manipulation";
+import { drawListOfProjects, drawListOfToDos } from "./dom-manipulation";
 
 export let projectsArray = [];
 
@@ -16,5 +16,5 @@ projectsArray[0].addToDoItem(new todoItem("Task 7", "Description for Task 7", "2
 projectsArray[0].addToDoItem(new todoItem("Task 8", "Description for Task 8", "2023-01-08", "1:30 PM", "medium"));
 projectsArray[0].addToDoItem(new todoItem("Task 9", "Description for Task 9", "2023-01-09", "6:00 PM", "low"));
 projectsArray[0].addToDoItem(new todoItem("Task 10", "Description for Task 10", "2023-01-10", "8:45 AM", "high"));
-
+//drawListOfProjects();
 drawListOfToDos(projectsArray[0].toDoItems);

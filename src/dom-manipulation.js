@@ -3,7 +3,8 @@ import { projectsArray } from "./index.js";
 
 todoList = document.getElementById("todoList");
 
-export function drawListOfToDos(toDoArray) {    
+export function drawListOfToDos(toDoArray) {  
+    todoList.innerHTML = ("");  
     toDoArray.forEach(toDoItem => {
         console.log(toDoItem);
         let newElem = document.createElement('li');
@@ -13,6 +14,9 @@ export function drawListOfToDos(toDoArray) {
     });
 }
 
+export function testFunction() {
+    console.log('here')
+}
 
 export function drawListOfProjects(projectsArray) {
     projectsList = document.getElementById('projectsList');
@@ -20,15 +24,16 @@ export function drawListOfProjects(projectsArray) {
     projectsArray.forEach(project => {
         console.log(project);
         let newProject = document.createElement('button');
-        newProject.setAttribute('onclick', drawListOfToDos(project.toDoItems));
+        newProject.addEventListener("click", function bla(){drawListOfToDos(project.toDoItems);})
+        //newProject.setAttribute('onclick', function bla(){console.log('test');});
+        //newProject.setAttribute('class', 'projectElement');
         newProject.innerHTML = `${project.title} ..... ${project.description}`;
         projectsList.appendChild(newProject);
         console.log(project.toDoItems);
     });
 }
 
-
-
+//let projectButtons = getElementsByClassName('projectElement');
 let form = document.getElementById('addToDoForm');
 form.addEventListener('submit', callbackFunction);
                       
