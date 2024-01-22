@@ -1,18 +1,17 @@
 import { drawListOfToDos } from "./dom-manipulation";
 
-export function todoItem(title, description='', dueDate = 'false', dueTime = 'false', priority='low', done = "false") {
+export class todoItem {
+  constructor(title, description, dueDate, dueTime, priority, done = false) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
     this.dueTime = dueTime;
     this.priority = priority;
     this.done = done;
-    return {
-        title,
-        description,
-        dueDate,
-        dueTime,
-        priority,
-        done,
-    }
+  }
+
+  setAsDone() {
+    this.done = !this.done;
+    console.log(this.done);
+  }
 }
