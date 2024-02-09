@@ -1,8 +1,13 @@
 import { project } from "./project";
-import { projectsArray } from "./index.js";
+import { projectsArray } from "./index";
 
-let todoList = document.getElementById("todoListUl");
-let doneList = document.getElementById("doneListUl");
+const toggleProjectsList = document.getElementById('toggleProjectsList');
+const todoList = document.getElementById("todoListUl");
+const doneList = document.getElementById("doneListUl");
+const form = document.getElementById("addToDoForm");
+const projectsList = document.getElementById("projectsList");
+form.addEventListener("submit", callbackFunction);
+toggleProjectsList.addEventListener('click', toggleProjects)
 
 export function drawListOfToDos(toDoArray) {
   todoList.innerHTML = "";
@@ -27,7 +32,6 @@ export function drawListOfDoneToDos(toDoArray) {
   doneList.innerHTML = "";
   toDoArray.forEach((toDoItem) => {
     if (toDoItem.done == true) {
-      console.log(toDoItem);
       let newElem = document.createElement("li");
       newElem.innerHTML = "<input type='checkbox'></input>";
       newElem.innerHTML += toDoItem.title;
@@ -35,7 +39,6 @@ export function drawListOfDoneToDos(toDoArray) {
         toDoItem.setAsDone();
         drawListOfToDos(toDoArray);
         drawListOfDoneToDos(toDoArray);
-        console.log(toDoItem);
       });
       doneList.appendChild(newElem);
     }
@@ -43,10 +46,8 @@ export function drawListOfDoneToDos(toDoArray) {
 }
 
 export function drawListOfProjects(projectsArray) {
-  projectsList = document.getElementById("projectsList");
   projectsList.innerText = "";
   projectsArray.forEach((project) => {
-    console.log(project);
     let newProject = document.createElement("button");
     newProject.addEventListener("click", function bla() {
       drawListOfToDos(project.toDoItems);
@@ -55,22 +56,27 @@ export function drawListOfProjects(projectsArray) {
     //newProject.setAttribute('class', 'projectElement');
     newProject.innerHTML = `${project.title} ..... ${project.description}`;
     projectsList.appendChild(newProject);
-    console.log(project.toDoItems);
   });
 }
 
 //let projectButtons = getElementsByClassName('projectElement');
-let form = document.getElementById("addToDoForm");
-form.addEventListener("submit", callbackFunction);
+
+function toggleProjects(event) {
+  if (projectsList.className === 'collapsed') {
+    projectsList.classList.remove("collapsed");
+  }
+  else{
+    projectsList.setAttribute('class', 'collapsed');
+  }
+  
+}
 
 function callbackFunction(event) {
   event.preventDefault();
   const myFormData = new FormData(event.target);
 
   myFormData.forEach((element) => {
-    console.log(element);
   });
-  console.log(myFormData);
   const formDataObj = Object.fromEntries(myFormData.entries());
 }
 
@@ -89,3 +95,5 @@ function addProjectFunction(event) {
   drawListOfProjects(projectsArray);
   console.log(projectsArray);
 }
+
+//projectsArray.onload = drawListOfProjects(projectsArray);

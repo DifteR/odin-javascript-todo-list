@@ -1,10 +1,11 @@
-.addToDoButton{
+.addToDoButton {
     /* border: none; */
     border-radius: 4px;
     background: none;
     border-style: solid;
 }
-.submitToDoButton{
+
+.submitToDoButton {
     /* border: none; */
     border-radius: 4px;
     background: none;
@@ -13,18 +14,26 @@
     font-weight: 1000;
     text-transform: uppercase;
 }
-#lowPriorityBtn{
+
+.collapsed {
+    display: none;
+}
+
+#lowPriorityBtn {
     color: green;
     font-weight: 1000;
 }
-#midPriorityBtn{
+
+#midPriorityBtn {
     color: orange;
     font-weight: 1000;
 }
-#highPriorityBtn{
+
+#highPriorityBtn {
     color: red;
     font-weight: 1000;
 }
-#toDoBody{
+
+#toDoBody {
     display: flex;
 }

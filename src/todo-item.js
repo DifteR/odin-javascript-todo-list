@@ -12,6 +12,5 @@ export class todoItem {
 
   setAsDone() {
     this.done = !this.done;
-    console.log(this.done);
   }
 }

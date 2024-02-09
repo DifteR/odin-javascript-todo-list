@@ -96,5 +96,5 @@ projectsArray[0].addToDoItem(
     "high"
   )
 );
-//drawListOfProjects();
+drawListOfProjects(projectsArray);
 drawListOfToDos(projectsArray[0].toDoItems);
